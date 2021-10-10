@@ -1,10 +1,10 @@
-import {parse, Args, ArgParsingOptions} from './deps.ts';
+import {argParser, Args, ArgParsingOptions} from './deps.ts';
 
 export class ArgvParser {
 	argv: Args = {_: []};
 
 	constructor(argv: string[], options: ArgParsingOptions = {}) {
-		this.argv = parse(argv, options);
+		this.argv = argParser(argv, options);
 	}
 
 	command(name: string, handler: (argv: Args) => void) {
