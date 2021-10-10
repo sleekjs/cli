@@ -10,10 +10,10 @@ export async function newHandler(argv: Args) {
 
 	const nameSlug = name.replace(/\s|\/|\\/g, '-');
 
-	ensureDirSync(`${nameSlug}/src/components`);
+	ensureDirSync(`${nameSlug}/src`);
 	Deno.writeTextFileSync(`${nameSlug}/src/App.sleek`, 'Todo');
 	Deno.writeTextFileSync(`${nameSlug}/config.json`, JSON.stringify({
-		entry: 'App.sleek'
+		routes: {'': 'App.sleek'}
 	}, null, '	'));
 	console.log('Initialized project', name);
 }
