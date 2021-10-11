@@ -1,7 +1,7 @@
-import {Args, parse, existsSync, ensureDirSync} from '../deps.ts';
+import {parse, existsSync, ensureDirSync} from '../deps.ts';
 import {fail} from '../ui.ts';
 
-export function buildHandler(argv: Args) {
+export function buildHandler() {
 	if (!existsSync('config.json')) {
 		fail('Not a sleek app!');
 	}
@@ -13,7 +13,13 @@ export function buildHandler(argv: Args) {
 
 	for (const path in config.entries || {}) {
 		const entry = config.entries[path];
-		let {HTML, CSS, JS} = parse(Deno.readTextFileSync(entry)); // TODO HTML template customizable
+		let HTML = '', CSS = '', JS = '';
+
+		try {
+			({HTML, CSS, JS} = parse(Deno.readTextFileSync(entry))); // TODO HTML template customizable
+		} catch {
+			fail('File', entry, 'not found')
+		}
 
 		HTML = HTML.replace(/<%css|js%>/g, 'bundle');
 
@@ -26,4 +32,6 @@ export function buildHandler(argv: Args) {
 
 		// TODO url params etc.
 	}
+
+	Deno.chdir('../');
 }
