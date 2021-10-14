@@ -5,7 +5,7 @@ export {ensureDirSync, existsSync} from 'https://deno.land/std@0.110.0/fs/mod.ts
 
 export {basename} from 'https://deno.land/std@0.110.0/path/mod.ts'
 
-export {parse} from 'https://deno.land/x/sleek@v0.0.0/index.js';
+export {parse} from 'https://deno.land/x/sleek@v0.1.0/index.js';
 
 export const CLI_VERSION = '1.0.0';
 export const ENGINE_VERSION = '1.0.0';
