@@ -11,8 +11,8 @@ export function buildHandler() {
 	ensureDirSync('dist');
 	Deno.chdir('src');
 
-	for (const path in config.entries || {}) {
-		const entry = config.entries[path];
+	for (const path in config.routes || {}) {
+		const entry = config.routes[path];
 		let HTML = '', CSS = '', JS = '';
 
 		try {
@@ -21,7 +21,7 @@ export function buildHandler() {
 			fail('File', entry, 'not found')
 		}
 
-		HTML = HTML.replace(/<%css|js%>/g, 'bundle');
+		HTML = HTML.replace(/<%(css|js)%>/g, 'bundle');
 
 		ensureDirSync(`../dist/${path}`)
 		Deno.writeTextFileSync(`../dist/${path}/index.html`, HTML);
