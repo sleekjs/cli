@@ -5,7 +5,7 @@
 ## Here be dragons
 
 This, or on that matter [Sleek], is not even _close_ to being production ready.
-It's and Sleek are missing many essential features. But it would be awesome if
+It and Sleek are missing many essential features. But it would be awesome if
 you could test it out!
 
 ## Installation
