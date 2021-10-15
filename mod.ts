@@ -5,6 +5,7 @@ import {newHandler} from './handlers/new.ts';
 import {devHandler} from './handlers/dev.ts';
 import {buildHandler} from './handlers/build.ts';
 import {helpHandler} from './handlers/help.ts';
+import {generateHandler} from './handlers/generate.ts';
 
 parseArgs(Deno.args, {})
 	.defaultCommand(() => {
@@ -14,4 +15,5 @@ parseArgs(Deno.args, {})
 	.command('new', newHandler)
 	.command('dev', devHandler)
 	.command('build', buildHandler)
+	.command('generate', generateHandler)
 	.command('help', helpHandler);

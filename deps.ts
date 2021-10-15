@@ -3,7 +3,7 @@ export type {Args, ArgParsingOptions} from 'https://deno.land/std@0.106.0/flags/
 
 export {ensureDirSync, existsSync} from 'https://deno.land/std@0.110.0/fs/mod.ts';
 
-export {basename} from 'https://deno.land/std@0.110.0/path/mod.ts'
+export {basename, dirname} from 'https://deno.land/std@0.110.0/path/mod.ts'
 
 export {parse} from 'https://deno.land/x/sleek@v0.1.0/index.js';
 

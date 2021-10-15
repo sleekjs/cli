@@ -1,7 +1,7 @@
 import {Args} from '../deps.ts';
 import {fail} from '../ui.ts';
 
-export async function helpHandler(argv: Args) {
+export function helpHandler(argv: Args) {
 	const what = argv._[1];
 
 	if (what) {

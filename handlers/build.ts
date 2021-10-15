@@ -1,10 +1,9 @@
-import {parse, existsSync, ensureDirSync} from '../deps.ts';
+import {parse, ensureDirSync} from '../deps.ts';
 import {fail} from '../ui.ts';
+import {failWhenNotProject} from '../utils/failWhenNotProject.ts';
 
 export function buildHandler() {
-	if (!existsSync('config.json')) {
-		fail('Not a sleek app!');
-	}
+	failWhenNotProject();
 
 	const config = JSON.parse(Deno.readTextFileSync('config.json'));
 
