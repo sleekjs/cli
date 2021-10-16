@@ -46,7 +46,7 @@ arguments:
 		- service
 
 	name
-		The path to write at, relative to the srv directory.
+		The path to write at, relative to the src directory.
 		The basename of the string will be used as the name.
 
 	`.trim()
