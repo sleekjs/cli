@@ -13,10 +13,11 @@ export function helpHandler(argv: Args) {
 const helpMessages: Record<string, string> = {
 	_default: `
 Available commands:
-	new     Generate a new sleek project
-	dev     Start a development server
-	build   Build the app
-	help    Show this help
+	new      Generate a new sleek project
+	dev      Start a development server
+	build    Build the app
+	generate Scaffold a new part of your app
+	help     Show this help
 
 For more detailed help, run \`sleek help [command-name]\`
 	`.trim(),
@@ -34,5 +35,19 @@ options:
 	--port
 		The port at which to serve. Defaults to 4242
 	`.trim(),
-	build: 'sleek build: build the code and write it to the dist folder'
+	build: 'sleek build: build the code and write it to the dist folder',
+	generate: `
+sleek generate: Scaffold a part of your current project
+
+arguments:
+	schema
+		The schema of the thing to generate. Can be one of:
+		- component
+		- service
+
+	name
+		The path to write at, relative to the src directory.
+		The basename of the string will be used as the name.
+
+	`.trim()
 };

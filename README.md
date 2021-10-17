@@ -15,15 +15,17 @@ you could test it out!
 Then run:
 
 ```console
-$ you@computer deno install -A --unstable --quiet -n sleek https://deno.land/x/sleek_cli@v1.0.0/mod.ts
+$ you@computer deno install -A --unstable --quiet -n sleek https://deno.land/x/sleek_cli/mod.ts
 ```
 
 ## Using
 
-There are three main commands:
+These are the currently available commands:
 
 - `sleek new`: Create a new sleek project
 - `sleek dev`: Start a dev server
 - `sleek build`: Build your project
+- `sleek generate`: Scaffold a new component or service
+- `sleek help`: View detailed help
 
 [sleek]: https://github.com/sleekjs/sleek
