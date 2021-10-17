@@ -15,7 +15,13 @@ you could test it out!
 Then run:
 
 ```console
-$ you@computer deno install -A --unstable --quiet -n sleek https://deno.land/x/sleek_cli/mod.ts
+$ you@computer deno install -A -f --unstable --quiet -n sleek https://deno.land/x/sleek_cli/mod.ts
+```
+
+To install the latest development version, run:
+
+```console
+$ you@computer deno install -A -f --unstable --quiet -n sleek https://raw.githubusercontent.com/sleekjs/cli/v1.1.2/mod.ts
 ```
 
 ## Using
